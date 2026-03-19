@@ -14,14 +14,6 @@ x,y = 320, 240 # Spawn Position
 SIZE = 15
 SPEED = 3
 
-def draw_glow_rect(surf, color, rect, radius=4, glow_size=6, alpha=60):
-    glow_surf = pygame.Surface((rect[2] + glow_size*2, rect[3] + glow_size*2), pygame.SRCALPHA)
-    r, g, b = color
-    pygame.draw.rect(glow_surf, (r, g, b, alpha),
-                     (0, 0, rect[2] + glow_size*2, rect[3] + glow_size*2), border_radius=radius+glow_size)
-    surf.blit(glow_surf, (rect[0] - glow_size, rect[1] - glow_size))
-    pygame.draw.rect(surf, color, rect, border_radius=radius)
-
 while True:
     clock.tick(60)
 
